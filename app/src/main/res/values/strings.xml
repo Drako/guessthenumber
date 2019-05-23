@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Guess the number</string>
+    <string name="label_guess_the_number">Guess a number:</string>
+    <string name="button_tryit">Try it!</string>
+    <string name="toast_correct">You found the number after %d guesses!</string>
+    <string name="toast_less">The number is less than your guess.</string>
+    <string name="toast_bigger">The number is bigger than your guess.</string>
+</resources>

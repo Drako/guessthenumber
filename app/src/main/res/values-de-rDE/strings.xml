@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rate die Zahl</string>
+    <string name="label_guess_the_number">Rate eine Zahl:</string>
+    <string name="button_tryit">Versuch es!</string>
+    <string name="toast_correct">Du hast die Zahl nach %d Versuchen gefunden!</string>
+    <string name="toast_less">Die Zahl ist kleiner als dein Versuch.</string>
+    <string name="toast_bigger">Die Zahl ist größer als dein Versuch.</string>
+</resources>
