@@ -56,9 +56,19 @@ class MainActivityTest {
         return result
     }
 
+    private fun mockSearchedNumber(value: Int) {
+        MainActivity::class.java
+            .getDeclaredField("searchedNumber")
+            .apply {
+                isAccessible = true
+            }
+            .set(activityRule.activity, value)
+    }
+
     @Test
     fun gameShouldWork() {
         repeat(100) {
+            mockSearchedNumber(it + 1)
             playTheGame()
         }
     }
