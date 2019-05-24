@@ -5,7 +5,6 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.action.ViewActions.clearText
 import androidx.test.espresso.action.ViewActions.typeText
-import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
@@ -75,7 +74,7 @@ class MainActivityTest {
             when (tryNumber(middle)) {
                 Result.Correct -> found = true
                 Result.Less -> range = range.first until middle
-                Result.Bigger -> range = (middle+1)..range.endInclusive
+                Result.Bigger -> range = (middle + 1)..range.endInclusive
             }
         }
 
