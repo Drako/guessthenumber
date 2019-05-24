@@ -2,11 +2,8 @@ package guru.drako.ratediezahl
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.annotation.StringRes
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlin.random.Random
-import kotlin.random.nextInt
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,9 +12,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun generateNewNumber() = (1..100).random()
 
-    private fun showToast(@StringRes messageId: Int, vararg values: Any) {
-        val message = getString(messageId, *values)
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    private fun displayResultMessage(@StringRes messageId: Int, vararg values: Any) {
+        resultText.text = getString(messageId, *values)
+        resultText.hint = "$messageId"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,12 +26,12 @@ class MainActivity : AppCompatActivity() {
             ++guesses
             when {
                 number == searchedNumber -> {
-                    showToast(R.string.toast_correct, guesses)
+                    displayResultMessage(R.string.toast_correct, guesses)
                     searchedNumber = generateNewNumber()
                     guesses = 0
                 }
-                number < searchedNumber -> showToast(R.string.toast_bigger)
-                number > searchedNumber -> showToast(R.string.toast_less)
+                number < searchedNumber -> displayResultMessage(R.string.toast_bigger)
+                number > searchedNumber -> displayResultMessage(R.string.toast_less)
             }
         }
     }
